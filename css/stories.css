@@ -5,27 +5,41 @@
 html {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 62.5%;
+    color: rgba(0,0,0,.7);
 }
 
 body {
+    background-color: rgba(255,251,135,1);
     display: flex;
     flex-flow: nowrap column;
     font-size: 1.2rem;
     justify-content: space-around;
     margin: 0;
-    padding: 0;
+    padding: 1rem;
 }
 
-h1 {
+.header {
+    display: flex;
+    justify-content: center;
+    padding: .5rem;
+}
+
+.header h1 {
     margin: 0;
     padding: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.8rem;
 }
 
+.menu {
+    padding: .5rem 0 .5rem 0;
+}
+
 .menu .menu-button {
-    font-family: 'Courier New', Courier, monospace;
     width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    margin: .5rem 0 .5rem 0;
+    padding: 1.4rem 0;
 }
 
 .line {

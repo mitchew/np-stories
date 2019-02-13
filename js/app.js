@@ -3,8 +3,10 @@
  * Date: December 11, 2018
  * Description: This application will display Nez Perce stories in a story book
  *   like manner.
- * Dependencies: stories.js, ajax.js
+ * Dependencies: ajax.js, helpers.js
  */
+'use strict';
+
 console.log('Loading application');
 console.log('Setting menu container selector');
 let menu = document.querySelectorAll('.menu')[0];
@@ -19,7 +21,7 @@ story.innerHTML = '';
 console.log('Setting storyList array');
 let storyList = [
     "hey'uuxchacwal-kaa-hinmeet.json",
-    "iceyeeye-tilipe-niin.json"
+    "iceyeeye-tilipe-niin.json",
 ];
 console.log(storyList);
 
@@ -27,7 +29,7 @@ console.log('Creating menu button elements');
 storyList.forEach(function (story) {
 
     console.log('Creating button for ' + story);
-    let fragment = stories.createElement('button', document);
+    let fragment = helpers.createElement('button', document);
     fragment.className = 'menu-button';
     fragment.textContent = story;
     console.log('Adding button to body');
@@ -55,16 +57,7 @@ menuList.forEach(function (button) {
         let storyPath = 'stories/' + storyName;
         console.log(storyPath);
         console.log('Getting the story');
-        ajax.request('Get', storyPath);
-            // .then(function (response) {
-            //     console.log('response');
-            //     console.log(response);
-            //     console.log(response.data);
-            //     document.data = response.data;
-            //     writeStory(document, story);
-            // })
-            // .catch(function (error) {
-            //     console.log(error);
-            // });
+        ajax.request('Get', storyPath, document, story);
+        
     });
 });
